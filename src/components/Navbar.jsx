@@ -1,4 +1,6 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png"; // Import the logo
 
@@ -88,7 +90,8 @@ const Navbar = () => {
       <div style={whiteBarStyle}>
         <div className="d-flex align-items-center flex-wrap">
           {/* Left side with contact info and online icons */}
-          <i className="bi bi-telephone-fill"></i>&nbsp;+800-123-4567 6587 &nbsp;|&nbsp;
+          <i className="bi bi-telephone-fill"></i>&nbsp;+800-123-4567 6587
+          &nbsp;|&nbsp;
           <i className="bi bi-geo-alt-fill"></i>&nbsp;Beverley, New York 224 USA
         </div>
         <div className="d-flex flex-wrap">
@@ -112,11 +115,19 @@ const Navbar = () => {
       </div>
       <hr />
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style={{ padding: "10px 20px" }}>
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
+        style={{ padding: "10px 20px" }}
+      >
         <div className="container">
           {/* Logo */}
           <div className="d-flex align-items-center">
-            <img src={logo} alt="Logo" className="logo" style={{ maxWidth: "100px", height: "auto" }} />
+            <img
+              src={logo}
+              alt="Logo"
+              className="logo"
+              style={{ maxWidth: "100px", height: "auto" }}
+            />
           </div>
 
           {/* Toggle Button for Small Screens */}
