@@ -11,7 +11,7 @@ const Profile = () => {
     padding: "20px",
     margin: "0 auto",
     maxWidth: "1300px",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
+    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
   };
 
   const leftSideStyle = {
@@ -24,8 +24,9 @@ const Profile = () => {
 
   const profileImageStyle = {
     borderRadius: "50%",
-    width: "500px", // Increased the size
-    height: "530px", // Increased the size
+    width: "100%", // Ensure image adapts to container
+    maxWidth: "300px", // Limit max size for smaller screens
+    height: "auto", // Maintain aspect ratio
     position: "relative",
     zIndex: 2,
   };
@@ -74,15 +75,27 @@ const Profile = () => {
     color: "#555",
   };
 
+  // Responsive adjustments using inline styles with media queries
+  const responsiveContainer = {
+    ...containerStyle,
+    flexDirection: "column",
+    alignItems: "center",
+  };
+
+  const responsiveRightSideStyle = {
+    ...rightSideStyle,
+    textAlign: "center", // Center text on smaller screens
+  };
+
   return (
-    <div style={containerStyle}>
+    <div style={window.innerWidth <= 768 ? responsiveContainer : containerStyle}>
       {/* Left Side: Profile Image */}
       <div style={leftSideStyle}>
         <img src={profileImage} alt="Profile" style={profileImageStyle} />
       </div>
 
       {/* Right Side: Text and Features */}
-      <div style={rightSideStyle}>
+      <div style={window.innerWidth <= 768 ? responsiveRightSideStyle : rightSideStyle}>
         <h2 style={headingStyle}>About Our Edukon</h2>
         <h1>Good Qualification Services And Better Skills</h1>
         <p style={paragraphStyle}>

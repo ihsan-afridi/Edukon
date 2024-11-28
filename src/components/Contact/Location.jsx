@@ -15,7 +15,6 @@ const Location = () => {
     justifyContent: "space-between",
     padding: "20px",
     backgroundColor: "#fff",
-    // border: "5px solid red", // Matches red border
     boxSizing: "border-box",
   };
 
@@ -23,6 +22,7 @@ const Location = () => {
     flex: "2",
     marginRight: "20px",
     minWidth: "300px", // Ensures responsiveness
+    marginBottom: "20px", // Adds spacing at the bottom for small screens
   };
 
   const infoContainerStyle = {

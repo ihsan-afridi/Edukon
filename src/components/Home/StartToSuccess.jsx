@@ -29,32 +29,32 @@ const StartToSuccess = () => {
 
   const statsContainerStyle = {
     display: "flex",
-    flexWrap: "nowrap", // No wrapping, all cards in one row
+    flexWrap: "wrap", // Allow wrapping for smaller screens
     justifyContent: "center",
     gap: "15px",
-    overflowX: "auto", // Add horizontal scrolling for small screens
     margin: "0 auto", // Center the container
+    width: "100%",
   };
 
   const statCardStyle = {
     backgroundColor: "#fff",
     borderRadius: "8px",
-    padding: "15px", // Reduced padding
+    padding: "15px",
     textAlign: "center",
-    width: "200px", // Reduced width for smaller cards
+    width: "200px",
     minWidth: "200px",
     boxShadow: "0 3px 5px rgba(0, 0, 0, 0.1)",
     transition: "0.3s ease-in-out",
   };
 
   const statNumberStyle = {
-    fontSize: "32px", // Reduced font size
+    fontSize: "28px", // Adjusted for better readability on smaller screens
     color: "orange",
     marginBottom: "8px",
   };
 
   const statDescriptionStyle = {
-    fontSize: "14px", // Reduced font size
+    fontSize: "14px",
     color: "#555",
     lineHeight: "1.4",
   };

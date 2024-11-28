@@ -40,7 +40,8 @@ const ContactForm = () => {
   const containerStyle = {
     maxWidth: "600px",
     margin: "auto",
-    padding: isMobile ? "10px" : "20px",
+    padding: "20px",
+    boxSizing: "border-box",
   };
 
   const headingStyle = {
@@ -64,6 +65,7 @@ const ContactForm = () => {
     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
     fontSize: "16px",
     width: "100%",
+    marginBottom: "15px",
   };
 
   const textareaStyle = {
@@ -74,6 +76,7 @@ const ContactForm = () => {
     fontSize: "16px",
     width: "100%",
     height: "150px",
+    marginBottom: "15px",
   };
 
   const buttonStyle = {
@@ -90,8 +93,8 @@ const ContactForm = () => {
 
   const rowStyle = {
     display: "flex",
+    flexDirection: isMobile ? "column" : "row", // Stack input fields on mobile
     gap: "20px",
-    flexWrap: isMobile ? "wrap" : "nowrap",
     marginBottom: "20px",
   };
 
@@ -110,7 +113,6 @@ const ContactForm = () => {
         {/* First Row: Name and Email */}
         <div style={rowStyle}>
           <div style={halfWidthInput}>
-            {/* <label>Your Name *</label> */}
             <input
               type="text"
               name="name"
@@ -122,7 +124,6 @@ const ContactForm = () => {
             />
           </div>
           <div style={halfWidthInput}>
-            {/* <label>Your Email *</label> */}
             <input
               type="email"
               name="email"
@@ -138,7 +139,6 @@ const ContactForm = () => {
         {/* Second Row: Mobile and Subject */}
         <div style={rowStyle}>
           <div style={halfWidthInput}>
-            {/* <label>Mobile Number *</label> */}
             <input
               type="text"
               name="mobile"
@@ -150,7 +150,6 @@ const ContactForm = () => {
             />
           </div>
           <div style={halfWidthInput}>
-            {/* <label>Your Subject *</label> */}
             <input
               type="text"
               name="subject"
@@ -165,7 +164,6 @@ const ContactForm = () => {
 
         {/* Message Input */}
         <div>
-          {/* <label>Your Message *</label> */}
           <textarea
             name="message"
             value={formData.message}

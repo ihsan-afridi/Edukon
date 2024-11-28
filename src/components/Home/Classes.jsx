@@ -36,7 +36,7 @@ const instructors = [
 const Classes = () => {
   const containerStyle = {
     padding: "40px 20px",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
+    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
   };
 
   const cardStyle = {
@@ -48,20 +48,11 @@ const Classes = () => {
   };
 
   const profileImageStyle = {
-    width: "70%",
+    width: "60%",
     height: "auto",
     objectFit: "cover",
     borderRadius: "50%",
     marginTop: "15px",
-  };
-
-  // Media query adjustments
-  const smallScreenProfileImageStyle = {
-    width: "50%",
-  };
-
-  const extraSmallScreenProfileImageStyle = {
-    width: "40%",
   };
 
   const cardBodyStyle = {
@@ -127,44 +118,43 @@ const Classes = () => {
       <h1 style={{ textAlign: "center", marginBottom: "30px", color: "black" }}>
         Classes Taught By Real Creators
       </h1>
-      <div className="row">
-        {instructors.map((instructor, index) => (
-          <div key={index} className="col-md-6 col-lg-3 mb-4">
-            <div style={cardStyle}>
-              <img
-                src={profileImage}
-                alt={instructor.name}
-                style={
-                  window.innerWidth <= 576
-                    ? extraSmallScreenProfileImageStyle
-                    : window.innerWidth <= 768
-                    ? smallScreenProfileImageStyle
-                    : profileImageStyle
-                }
-              />
-              <div style={cardBodyStyle}>
-                <h5 style={titleStyle}>{instructor.name}</h5>
-                <p style={textStyle}>{instructor.title}</p>
-                <p style={textStyle}>
-                  <strong>{instructor.courses}</strong> |{" "}
-                  <strong>{instructor.students}</strong>
-                </p>
-                <div style={starsStyle}>
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <FaStar
-                      key={i}
-                      color={i < Math.floor(instructor.stars) ? "orange" : "#ccc"}
-                    />
-                  ))}
-                  <span style={{ marginLeft: "8px" }}>
-                    {instructor.stars.toFixed(1)}
-                  </span>
+      <div className="container">
+        <div className="row">
+          {instructors.map((instructor, index) => (
+            <div
+              key={index}
+              className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center"
+            >
+              <div style={cardStyle}>
+                <img
+                  src={profileImage}
+                  alt={instructor.name}
+                  style={profileImageStyle}
+                />
+                <div style={cardBodyStyle}>
+                  <h5 style={titleStyle}>{instructor.name}</h5>
+                  <p style={textStyle}>{instructor.title}</p>
+                  <p style={textStyle}>
+                    <strong>{instructor.courses}</strong> |{" "}
+                    <strong>{instructor.students}</strong>
+                  </p>
+                  <div style={starsStyle}>
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <FaStar
+                        key={i}
+                        color={i < Math.floor(instructor.stars) ? "orange" : "#ccc"}
+                      />
+                    ))}
+                    <span style={{ marginLeft: "8px" }}>
+                      {instructor.stars.toFixed(1)}
+                    </span>
+                  </div>
+                  <button style={buttonStyle}>View Profile</button>
                 </div>
-                <button style={buttonStyle}>View Profile</button>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div style={ctaStyle}>
         <h5>

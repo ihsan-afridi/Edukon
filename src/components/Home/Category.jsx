@@ -6,14 +6,14 @@ const Category = () => {
   const containerStyle = {
     padding: "20px",
     textAlign: "center",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
+    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
   };
 
   const headingStyle = {
     fontSize: "1.2rem",
     fontWeight: "bold",
     marginBottom: "10px",
-    color: 'orange'
+    color: "orange",
   };
 
   const subHeadingStyle = {
@@ -37,9 +37,9 @@ const Category = () => {
     border: "1px solid #ddd",
     borderRadius: "8px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    maxWidth: "300px",
-    flex: "1 1 calc(33.333% - 40px)", // For responsiveness
+    flex: "1 1 calc(33.333% - 40px)", // Default: three cards per row
     textAlign: "left",
+    maxWidth: "300px",
   };
 
   const iconStyle = {
@@ -74,8 +74,25 @@ const Category = () => {
     fontWeight: "bold",
   };
 
+  // Media Query for Responsiveness
+  const mediaQueryStyle = `
+    @media (max-width: 768px) {
+      .category-card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+      }
+    }
+    @media (max-width: 480px) {
+      .category-card {
+        flex: 1 1 100%; /* One card per row */
+      }
+    }
+  `;
+
   return (
     <div style={containerStyle}>
+      {/* Inline CSS for Media Queries */}
+      <style>{mediaQueryStyle}</style>
+
       {/* Heading */}
       <p style={headingStyle}>Popular Category</p>
       <h1 style={subHeadingStyle}>Popular Category For Learn</h1>
@@ -83,7 +100,7 @@ const Category = () => {
       {/* Categories */}
       <div style={categoryListStyle}>
         {/* Card 1 */}
-        <div style={categoryCardStyle}>
+        <div style={{ ...categoryCardStyle }} className="category-card">
           <FaLaptopCode style={iconStyle} />
           <div style={textContainerStyle}>
             <p style={titleStyle}>Computer Science</p>
@@ -91,7 +108,7 @@ const Category = () => {
           </div>
         </div>
         {/* Card 2 */}
-        <div style={categoryCardStyle}>
+        <div style={{ ...categoryCardStyle }} className="category-card">
           <FaBuilding style={iconStyle} />
           <div style={textContainerStyle}>
             <p style={titleStyle}>Civil Engineering</p>
@@ -99,7 +116,7 @@ const Category = () => {
           </div>
         </div>
         {/* Card 3 */}
-        <div style={categoryCardStyle}>
+        <div style={{ ...categoryCardStyle }} className="category-card">
           <FaChartLine style={iconStyle} />
           <div style={textContainerStyle}>
             <p style={titleStyle}>Business Analysis</p>
@@ -107,7 +124,7 @@ const Category = () => {
           </div>
         </div>
         {/* Card 4 */}
-        <div style={categoryCardStyle}>
+        <div style={{ ...categoryCardStyle }} className="category-card">
           <FaDatabase style={iconStyle} />
           <div style={textContainerStyle}>
             <p style={titleStyle}>Data Science Analytics</p>
@@ -115,7 +132,7 @@ const Category = () => {
           </div>
         </div>
         {/* Card 5 */}
-        <div style={categoryCardStyle}>
+        <div style={{ ...categoryCardStyle }} className="category-card">
           <FaGraduationCap style={iconStyle} />
           <div style={textContainerStyle}>
             <p style={titleStyle}>Learning Management</p>
@@ -123,7 +140,7 @@ const Category = () => {
           </div>
         </div>
         {/* Card 6 */}
-        <div style={categoryCardStyle}>
+        <div style={{ ...categoryCardStyle }} className="category-card">
           <FaCogs style={iconStyle} />
           <div style={textContainerStyle}>
             <p style={titleStyle}>Computer Engineering</p>

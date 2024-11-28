@@ -25,43 +25,45 @@ const Home = () => {
     alignItems: "center",
     justifyContent: "space-between",
     minHeight: "100vh", // Full viewport height
-    overflow: "hidden", // Prevent content from overflowing
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
+    padding: isMobile ? "20px" : "40px", // Adjust padding for smaller screens
+    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
   };
 
   const leftContentStyle = {
-    maxWidth: "600px",
-    textAlign: "left",
+    maxWidth: isMobile ? "100%" : "600px", // Full width on mobile
+    textAlign: isMobile ? "center" : "left",
     padding: "20px",
     flex: "1",
-    minWidth: "300px", // Ensure a minimum width for smaller screens
+    minWidth: "300px",
   };
 
   const headingStyle = {
-    fontSize: isMobile ? "2.5rem" : "3rem",
+    fontSize: isMobile ? "2rem" : "3rem", // Reduce font size on smaller screens
     fontWeight: "bold",
     marginBottom: "10px",
     lineHeight: "1.2",
   };
 
   const orangeLineStyle = {
-    fontSize: isMobile ? "1.8rem" : "2rem",
+    fontSize: isMobile ? "1.5rem" : "2rem",
     fontWeight: "bold",
     color: "#ff5722",
-    marginBottom: "20px",
-    marginTop: "30px",
+    marginBottom: isMobile ? "10px" : "20px",
+    marginTop: "20px",
   };
 
   const descriptionStyle = {
-    fontSize: "1.2rem",
-    marginBottom: "30px",
+    fontSize: isMobile ? "1rem" : "1.2rem", // Adjust font size for responsiveness
+    marginBottom: "20px",
     color: "#555",
   };
 
   const inputGroupStyle = {
     display: "flex",
+    flexDirection: isMobile ? "column" : "row", // Stack input and button on mobile
     alignItems: "center",
     marginBottom: "20px",
+    gap: isMobile ? "10px" : "0", // Add spacing between elements on mobile
   };
 
   const inputStyle = {
@@ -70,10 +72,11 @@ const Home = () => {
     border: "1px solid #ccc",
     borderRadius: "4px",
     fontSize: "1rem",
+    width: isMobile ? "100%" : "auto", // Full width on mobile
   };
 
   const buttonStyle = {
-    marginLeft: "10px",
+    marginLeft: isMobile ? "0" : "10px", // No margin on mobile
     padding: "10px 20px",
     backgroundColor: "#ff5722",
     color: "#fff",
@@ -82,6 +85,7 @@ const Home = () => {
     cursor: "pointer",
     fontSize: "1rem",
     fontWeight: "bold",
+    width: isMobile ? "100%" : "auto", // Full width on mobile
   };
 
   const rightImageContainerStyle = {
@@ -96,7 +100,7 @@ const Home = () => {
 
   const rightImageStyle = {
     width: "100%",
-    height: "100%",
+    height: isMobile ? "300px" : "100%", // Adjust height for mobile
     objectFit: "cover", // Ensure the image covers the container while maintaining aspect ratio
   };
 

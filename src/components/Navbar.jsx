@@ -12,6 +12,7 @@ const Navbar = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    flexWrap: "wrap", // Enable wrapping for smaller screens
   };
 
   // White bar style
@@ -85,12 +86,12 @@ const Navbar = () => {
 
       {/* White Info Bar */}
       <div style={whiteBarStyle}>
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center flex-wrap">
           {/* Left side with contact info and online icons */}
           <i className="bi bi-telephone-fill"></i>&nbsp;+800-123-4567 6587 &nbsp;|&nbsp;
           <i className="bi bi-geo-alt-fill"></i>&nbsp;Beverley, New York 224 USA
         </div>
-        <div>
+        <div className="d-flex flex-wrap">
           Find us on:&nbsp;
           <a href="#" style={{ margin: "0 8px", color: "orange" }}>
             <i className="bi bi-messenger"></i>
@@ -115,7 +116,7 @@ const Navbar = () => {
         <div className="container">
           {/* Logo */}
           <div className="d-flex align-items-center">
-            <img src={logo} alt="Logo" className="logo" />
+            <img src={logo} alt="Logo" className="logo" style={{ maxWidth: "100px", height: "auto" }} />
           </div>
 
           {/* Toggle Button for Small Screens */}
@@ -168,7 +169,7 @@ const Navbar = () => {
           </div>
 
           {/* Buttons */}
-          <div className="d-flex">
+          <div className="d-flex flex-wrap">
             <button style={loginButtonStyle}>
               <i className="bi bi-person"></i>&nbsp;Login
             </button>

@@ -8,42 +8,40 @@ const ResponsiveCards = () => {
     padding: "40px 20px",
     background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)", // Gradient background
     display: "flex",
-    flexWrap: "nowrap", // Keep cards in one row
-    overflowX: "auto", // Allow horizontal scrolling for small screens
+    flexWrap: "wrap", // Allow cards to wrap on smaller screens
     gap: "20px",
     minHeight: "100vh", // Full height for the viewport
     alignItems: "center", // Center cards vertically
+    justifyContent: "center", // Center cards horizontally
   };
 
   const cardStyle = {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column", // Stack items vertically on small screens
     alignItems: "center",
-    justifyContent: "space-between",
     backgroundColor: "#fff",
     borderRadius: "5px",
-    padding: "40px",
-    minWidth: "400px", // Ensures card width is suitable for all screen sizes
-    maxWidth: "600px",
+    padding: "20px",
+    width: "100%", // Take full width for responsiveness
+    maxWidth: "600px", // Restrict maximum width
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     transition: "0.3s ease-in-out",
   };
 
   const textContainerStyle = {
-    flex: 1,
-    textAlign: "left",
-    marginRight: "20px",
+    textAlign: "center", // Center align text for better responsiveness
+    marginBottom: "20px", // Add spacing between text and image
   };
 
   const headingStyle = {
-    fontSize: "24px",
+    fontSize: "20px", // Adjusted for better readability
     fontWeight: "bold",
     color: "#333",
     marginBottom: "10px",
   };
 
   const descriptionStyle = {
-    fontSize: "16px",
+    fontSize: "14px", // Adjusted for better readability
     color: "#555",
     lineHeight: "1.5",
     marginBottom: "15px",
@@ -60,10 +58,10 @@ const ResponsiveCards = () => {
   };
 
   const imageStyle = {
-    width: "180px", // Increased image width
+    width: "100%", // Make image responsive
+    maxWidth: "180px", // Restrict maximum size
     height: "auto", // Maintain aspect ratio
     borderRadius: "10px",
-    marginTop: "80px",
   };
 
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBookOpen, FaUser, FaStar } from "react-icons/fa";
 import img from "../../assets/img.jpg"; // Adjust the path if needed
+import './Card.css'; // Import the CSS file for styling
 
 const Card = () => {
   const courses = [
@@ -60,106 +61,33 @@ const Card = () => {
     },
   ];
 
-  const containerStyle = {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "20px",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
-  };
-
-  const rowStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "20px",
-    justifyContent: "center",
-  };
-
-  const cardStyle = {
-    flex: "1 1 calc(33.333% - 20px)", // 3 cards per row with gaps
-    maxWidth: "calc(33.333% - 20px)",
-    border: "1px solid #ddd",
-    borderRadius: "10px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-  };
-
-  const cardImageStyle = {
-    width: "100%",
-    height: "200px",
-    objectFit: "cover",
-  };
-
-  const cardBodyStyle = {
-    padding: "15px",
-    flex: "1",
-  };
-
-  const cardFooterStyle = {
-    padding: "10px 15px",
-    background: "#f9f9f9",
-    textAlign: "right",
-    fontSize: "14px",
-    color: "#555",
-  };
-
-  const titleStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    fontSize: "18px",
-    marginBottom: "10px",
-  };
-
-  const reviewStyle = {
-    fontSize: "14px",
-    color: "#888",
-    marginBottom: "10px",
-  };
-
-  const descriptionStyle = {
-    fontSize: "15px",
-    color: "#555",
-    marginBottom: "10px",
-  };
-
-  const smallTextStyle = {
-    fontSize: "14px",
-    color: "#888",
-  };
-
-  const priceStyle = {
-    color: "#007bff",
-  };
-
   return (
-    <div style={containerStyle}>
+    <div className="container">
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
         <h2>Featured Courses</h2>
         <p>Pick A Course To Get Started</p>
       </div>
-      <div style={rowStyle}>
+      <div className="row">
         {courses.map((course, index) => (
-          <div style={cardStyle} key={index}>
-            <img src={img} alt={course.title} style={cardImageStyle} />
-            <div style={cardBodyStyle}>
-              <div style={titleStyle}>
+          <div key={index} className="card">
+            <img src={img} alt={course.title} />
+            <div className="card-body">
+              <div className="title">
                 <span>{course.title}</span>
-                <span style={priceStyle}>{course.price}</span>
+                <span className="price">{course.price}</span>
               </div>
-              <p style={reviewStyle}>
+              <p className="review">
                 <FaStar style={{ color: "#ffc107" }} /> {course.reviews}
               </p>
-              <p style={descriptionStyle}>{course.description}</p>
-              <p style={smallTextStyle}>
+              <p className="description">{course.description}</p>
+              <p className="small-text">
                 <FaBookOpen /> {course.lessons}
               </p>
-              <p style={smallTextStyle}>
+              <p className="small-text">
                 <FaUser /> {course.mode}
               </p>
             </div>
-            <div style={cardFooterStyle}>
+            <div className="card-footer">
               <small>By {course.author}</small>
             </div>
           </div>
