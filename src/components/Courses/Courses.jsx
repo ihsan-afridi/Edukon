@@ -31,7 +31,7 @@ const Courses = () => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start", 
-    background: "linear-gradient(to right, #a8e063, #f7e5a5, #ffffff)", 
+    // background: "linear-gradient(to right, #a8e063, #f7e5a5, #ffffff)", 
     padding: "20px",
   };
 

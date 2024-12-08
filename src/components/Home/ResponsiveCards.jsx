@@ -3,48 +3,48 @@ import img5 from "../../assets/img5.png"; // Import image 1
 import img6 from "../../assets/img6.png"; // Import image 2
 
 const ResponsiveCards = () => {
-  // Inline styles
   const containerStyle = {
-    padding: "40px 20px",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)", // Gradient background
     display: "flex",
-    flexWrap: "wrap", // Allow cards to wrap on smaller screens
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
     gap: "20px",
-    minHeight: "100vh", // Full height for the viewport
-    alignItems: "center", // Center cards vertically
-    justifyContent: "center", // Center cards horizontally
+    padding: "40px 20px",
+    backgroundColor: "#f9f9f9",
+    minHeight: "100vh",
   };
 
   const cardStyle = {
     display: "flex",
-    flexDirection: "column", // Stack items vertically on small screens
+    flexDirection: "row", // Place items side by side
     alignItems: "center",
+    justifyContent: "space-between",
     backgroundColor: "#fff",
-    borderRadius: "5px",
+    borderRadius: "10px",
     padding: "20px",
-    width: "100%", // Take full width for responsiveness
-    maxWidth: "600px", // Restrict maximum width
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    transition: "0.3s ease-in-out",
+    maxWidth: "600px",
+    width: "100%",
+    transition: "transform 0.3s ease-in-out",
   };
 
   const textContainerStyle = {
-    textAlign: "center", // Center align text for better responsiveness
-    marginBottom: "20px", // Add spacing between text and image
+    flex: "1",
+    padding: "10px 20px",
   };
 
   const headingStyle = {
-    fontSize: "20px", // Adjusted for better readability
+    fontSize: "24px",
     fontWeight: "bold",
     color: "#333",
     marginBottom: "10px",
   };
 
   const descriptionStyle = {
-    fontSize: "14px", // Adjusted for better readability
+    fontSize: "16px",
     color: "#555",
-    lineHeight: "1.5",
-    marginBottom: "15px",
+    lineHeight: "1.6",
+    marginBottom: "20px",
   };
 
   const buttonStyle = {
@@ -58,16 +58,25 @@ const ResponsiveCards = () => {
   };
 
   const imageStyle = {
+    flex: "1",
     width: "100%", // Make image responsive
-    maxWidth: "180px", // Restrict maximum size
+    maxWidth: "200px", // Limit maximum size
     height: "auto", // Maintain aspect ratio
     borderRadius: "10px",
+  };
+
+  const responsiveCardStyle = {
+    ...cardStyle,
+    flexDirection: "column", // Stack items on smaller screens
+    textAlign: "center", // Center-align text for smaller screens
   };
 
   return (
     <div style={containerStyle}>
       {/* Card 1 */}
-      <div style={cardStyle}>
+      <div
+        style={window.innerWidth <= 768 ? responsiveCardStyle : cardStyle}
+      >
         <div style={textContainerStyle}>
           <h1 style={headingStyle}>Start Teaching Today</h1>
           <p style={descriptionStyle}>
@@ -80,7 +89,9 @@ const ResponsiveCards = () => {
       </div>
 
       {/* Card 2 */}
-      <div style={cardStyle}>
+      <div
+        style={window.innerWidth <= 768 ? responsiveCardStyle : cardStyle}
+      >
         <div style={textContainerStyle}>
           <h1 style={headingStyle}>If You Join Our Course</h1>
           <p style={descriptionStyle}>

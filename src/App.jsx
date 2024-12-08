@@ -20,6 +20,7 @@ import StartToSuccess from './components/Home/StartToSuccess'
 import ResponsiveCards from "./components/Home/ResponsiveCards";
 import Location from "./components/Contact/Location";
 import ContactForm from "./components/Contact/ContactForm";
+import ProjectManagement from "./components/Pages/ProjectManagement";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <>
         <Pages />
         <Profile/>
+        <ProjectManagement/>
         <Feedback/>
         <Classes/>
         <StartToSuccess/>

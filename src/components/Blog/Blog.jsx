@@ -33,7 +33,7 @@ const Blog = () => {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start",
-    background: "linear-gradient(to bottom, #a8e063, #f7e5a5, #ffffff)", // Mixed gradient background
+    // background: "linear-gradient(to bottom, #a8e063, #f7e5a5, #ffffff)", // Mixed gradient background
   };
 
   const headerStyle = {

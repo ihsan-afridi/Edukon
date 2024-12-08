@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png"; // Import the logo
 
 const Navbar = () => {
-  // Top bar style
   const topBarStyle = {
     backgroundColor: "#000", // Black background
-    padding: "10px 20px",
+    padding: "5px 15px",
     color: "#fff",
     fontSize: "14px",
     display: "flex",
@@ -17,7 +16,6 @@ const Navbar = () => {
     flexWrap: "wrap", // Enable wrapping for smaller screens
   };
 
-  // White bar style
   const whiteBarStyle = {
     backgroundColor: "#fff", // White background
     padding: "10px 20px",
@@ -25,10 +23,9 @@ const Navbar = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    flexWrap: "wrap", // For better responsiveness
+    flexWrap: "wrap", // Enable wrapping for smaller screens
   };
 
-  // Navbar link style
   const navLinkStyle = {
     margin: "0 15px",
     color: "#000",
@@ -37,100 +34,110 @@ const Navbar = () => {
     fontSize: "16px",
   };
 
-  // General button style
   const buttonStyle = {
-    borderRadius: "4px",
-    padding: "8px 20px", // Increased padding for more height
-    fontSize: "14px",
+    borderRadius: "0px",
+    padding: "12px 24px",
+    fontSize: "16px",
     fontWeight: "bold",
     border: "1px solid transparent",
     display: "inline-flex",
     alignItems: "center",
   };
 
-  // Button styles
-  const buyNowButtonStyle = {
-    ...buttonStyle,
-    backgroundColor: "#28a745", // Green background
-    color: "#fff",
-  };
-
   const loginButtonStyle = {
     ...buttonStyle,
     backgroundColor: "#fff",
-    color: "#f56a00", // Orange color
-    border: "1px solid #f56a00", // Orange border
-    marginRight: "10px",
+    color: "#f56a00",
+    border: "1px solid #f56a00",
+    borderRadius: "0",
   };
 
   const signUpButtonStyle = {
     ...buttonStyle,
-    backgroundColor: "#f56a00", // Orange background
+    backgroundColor: "#f56a00",
     color: "#fff",
+    borderRadius: "0",
+  };
+
+  const stickyNavbarStyle = {
+    position: "sticky",
+    top: 0,
+    zIndex: 1000, // Ensure it stays above other content
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: Adds a shadow effect
   };
 
   return (
-    <div>
+    <div style={stickyNavbarStyle}>
       {/* Top Bar */}
       <div style={topBarStyle}>
-        <div>
-          {/* Envato Market with Icon */}
+        <div className="d-flex align-items-center flex-wrap">
           <i
-            className="bi bi-shop"
-            style={{ marginRight: "8px", fontSize: "20px", color: "green" }}
+            className="bi bi-shop me-2"
+            style={{ fontSize: "20px", color: "green" }}
           ></i>
-          <span style={{ fontSize: "18px", fontWeight: "bold", color: "green" }}>
+          <span style={{ fontSize: "18px", fontWeight: "bold" }}>
             Envato Market
           </span>
         </div>
-        <button style={buyNowButtonStyle}>Buy Now</button>
+        <button
+          style={{ ...buttonStyle, backgroundColor: "#28a745", color: "#fff" }}
+        >
+          Buy Now
+        </button>
       </div>
 
       {/* White Info Bar */}
       <div style={whiteBarStyle}>
-        <div className="d-flex align-items-center flex-wrap">
-          {/* Left side with contact info and online icons */}
-          <i className="bi bi-telephone-fill"></i>&nbsp;+800-123-4567 6587
-          &nbsp;|&nbsp;
-          <i className="bi bi-geo-alt-fill"></i>&nbsp;Beverley, New York 224 USA
+        {/* Contact Information */}
+        <div
+          className="d-flex align-items-center flex-wrap"
+          style={{ fontSize: "18px", gap: "10px" }}
+        >
+          <i className="bi bi-telephone-fill"></i>
+          &nbsp;+800-123-4567 6587 &nbsp;|&nbsp;
+          <i className="bi bi-geo-alt-fill"></i>
+          &nbsp;Beverley, New York 224 USA
         </div>
-        <div className="d-flex flex-wrap">
+
+        {/* Social Media Links */}
+        <div
+          className="d-flex align-items-center flex-wrap"
+          style={{ fontSize: "18px", gap: "15px" }}
+        >
           Find us on:&nbsp;
-          <a href="#" style={{ margin: "0 8px", color: "orange" }}>
+          <a href="#" style={{ color: "orange" }}>
             <i className="bi bi-messenger"></i>
           </a>
-          <a href="#" style={{ margin: "0 8px", color: "orange" }}>
+          <a href="#" style={{ color: "orange" }}>
             <i className="bi bi-twitter"></i>
           </a>
-          <a href="#" style={{ margin: "0 8px", color: "orange" }}>
+          <a href="#" style={{ color: "orange" }}>
             <i className="bi bi-instagram"></i>
           </a>
-          <a href="#" style={{ margin: "0 8px", color: "orange" }}>
+          <a href="#" style={{ color: "orange" }}>
             <i className="bi bi-wifi"></i>
           </a>
-          <a href="#" style={{ margin: "0 8px", color: "orange" }}>
+          <a href="#" style={{ color: "orange" }}>
             <i className="bi bi-skype"></i>
           </a>
         </div>
       </div>
-      <hr />
+
       {/* Navbar */}
       <nav
         className="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
         style={{ padding: "10px 20px" }}
       >
-        <div className="container">
+        <div className="container-fluid">
           {/* Logo */}
-          <div className="d-flex align-items-center">
-            <img
-              src={logo}
-              alt="Logo"
-              className="logo"
-              style={{ maxWidth: "100px", height: "auto" }}
-            />
-          </div>
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo"
+            style={{ maxWidth: "150px", height: "auto" }}
+          />
 
-          {/* Toggle Button for Small Screens */}
+          {/* Toggle Button */}
           <button
             className="navbar-toggler"
             type="button"
@@ -146,29 +153,29 @@ const Navbar = () => {
 
           {/* Navbar Links */}
           <div
-            className="collapse navbar-collapse d-lg-flex align-items-center"
+            className="collapse navbar-collapse"
             id="navbarNav"
-            style={{ flexGrow: "1", justifyContent: "center" }}
+            style={{ justifyContent: "center" }}
           >
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link style={navLinkStyle} to="/">
-                  Home
+                  Home +
                 </Link>
               </li>
               <li className="nav-item">
                 <Link style={navLinkStyle} to="/courses">
-                  Courses
+                  Courses +
                 </Link>
               </li>
               <li className="nav-item">
                 <Link style={navLinkStyle} to="/blog">
-                  Blog
+                  Blog +
                 </Link>
               </li>
               <li className="nav-item">
                 <Link style={navLinkStyle} to="/pages">
-                  Pages
+                  Pages +
                 </Link>
               </li>
               <li className="nav-item">
@@ -180,14 +187,14 @@ const Navbar = () => {
           </div>
 
           {/* Buttons */}
-          <div className="d-flex flex-wrap">
-            <button style={loginButtonStyle}>
-              <i className="bi bi-person"></i>&nbsp;Login
-            </button>
-            <button style={signUpButtonStyle}>
-              <i className="bi bi-person-plus"></i>&nbsp;Sign Up
-            </button>
-          </div>
+        <div className="d-flex flex-wrap mt-2 mt-lg-0">
+         <button style={loginButtonStyle}>
+         <i className="bi bi-person"></i>&nbsp;Login
+       </button>
+      <button style={signUpButtonStyle}>
+      <i className="bi bi-person-plus"></i>&nbsp;Sign Up
+      </button>
+      </div>
         </div>
       </nav>
     </div>

@@ -8,7 +8,7 @@ const Contact = () => {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)", // Gradient background
+    // background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)", // Gradient background
     padding: "20px",
   };
 

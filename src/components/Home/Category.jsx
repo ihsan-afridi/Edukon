@@ -6,7 +6,7 @@ const Category = () => {
   const containerStyle = {
     padding: "20px",
     textAlign: "center",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
+    // background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
   };
 
   const headingStyle = {

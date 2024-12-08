@@ -36,10 +36,20 @@ const instructors = [
 const Classes = () => {
   const containerStyle = {
     padding: "40px 20px",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
+    textAlign: "center",
+  };
+
+  const scrollContainerStyle = {
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    flexWrap: "wrap",
+    paddingBottom: "20px",
   };
 
   const cardStyle = {
+    flex: "0 0 auto",
+    width: "220px",
     border: "none",
     borderRadius: "10px",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -48,7 +58,7 @@ const Classes = () => {
   };
 
   const profileImageStyle = {
-    width: "60%",
+    width: "80%",
     height: "auto",
     objectFit: "cover",
     borderRadius: "50%",
@@ -56,17 +66,17 @@ const Classes = () => {
   };
 
   const cardBodyStyle = {
-    padding: "20px",
+    padding: "15px",
   };
 
   const titleStyle = {
-    fontSize: "1.2rem",
+    fontSize: "1rem",
     fontWeight: "700",
     margin: "10px 0",
   };
 
   const textStyle = {
-    fontSize: "0.9rem",
+    fontSize: "0.8rem",
     color: "#6c757d",
   };
 
@@ -74,18 +84,19 @@ const Classes = () => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "1rem",
-    marginBottom: "15px",
+    fontSize: "0.9rem",
+    marginBottom: "10px",
   };
 
   const buttonStyle = {
     backgroundColor: "#007bff",
     color: "#fff",
     border: "none",
-    padding: "10px 20px",
+    padding: "8px 15px",
     borderRadius: "5px",
     cursor: "pointer",
     fontWeight: "bold",
+    fontSize: "0.8rem",
   };
 
   const ctaStyle = {
@@ -118,43 +129,36 @@ const Classes = () => {
       <h1 style={{ textAlign: "center", marginBottom: "30px", color: "black" }}>
         Classes Taught By Real Creators
       </h1>
-      <div className="container">
-        <div className="row">
-          {instructors.map((instructor, index) => (
-            <div
-              key={index}
-              className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center"
-            >
-              <div style={cardStyle}>
-                <img
-                  src={profileImage}
-                  alt={instructor.name}
-                  style={profileImageStyle}
-                />
-                <div style={cardBodyStyle}>
-                  <h5 style={titleStyle}>{instructor.name}</h5>
-                  <p style={textStyle}>{instructor.title}</p>
-                  <p style={textStyle}>
-                    <strong>{instructor.courses}</strong> |{" "}
-                    <strong>{instructor.students}</strong>
-                  </p>
-                  <div style={starsStyle}>
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <FaStar
-                        key={i}
-                        color={i < Math.floor(instructor.stars) ? "orange" : "#ccc"}
-                      />
-                    ))}
-                    <span style={{ marginLeft: "8px" }}>
-                      {instructor.stars.toFixed(1)}
-                    </span>
-                  </div>
-                  <button style={buttonStyle}>View Profile</button>
-                </div>
+      <div style={scrollContainerStyle}>
+        {instructors.map((instructor, index) => (
+          <div key={index} style={cardStyle}>
+            <img
+              src={profileImage}
+              alt={instructor.name}
+              style={profileImageStyle}
+            />
+            <div style={cardBodyStyle}>
+              <h5 style={titleStyle}>{instructor.name}</h5>
+              <p style={textStyle}>{instructor.title}</p>
+              <p style={textStyle}>
+                <strong>{instructor.courses}</strong> |{" "}
+                <strong>{instructor.students}</strong>
+              </p>
+              <div style={starsStyle}>
+                {Array.from({ length: 5 }, (_, i) => (
+                  <FaStar
+                    key={i}
+                    color={i < Math.floor(instructor.stars) ? "orange" : "#ccc"}
+                  />
+                ))}
+                <span style={{ marginLeft: "8px" }}>
+                  {instructor.stars.toFixed(1)}
+                </span>
               </div>
+              <button style={buttonStyle}>View Profile</button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
       <div style={ctaStyle}>
         <h5>

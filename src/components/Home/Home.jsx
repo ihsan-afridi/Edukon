@@ -21,70 +21,75 @@ const Home = () => {
   // Styles
   const containerStyle = {
     display: "flex",
-    flexDirection: isMobile ? "column" : "row", // Stack content vertically on mobile
+    flexDirection: isMobile ? "column" : "row",
     alignItems: "center",
     justifyContent: "space-between",
-    minHeight: "100vh", // Full viewport height
-    padding: isMobile ? "20px" : "40px", // Adjust padding for smaller screens
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
+    minHeight: "100vh",
+    padding: isMobile ? "20px" : "40px",
+    backgroundColor: "#f9f9f9",
+    boxSizing: "border-box", // Ensure consistent sizing
   };
 
   const leftContentStyle = {
-    maxWidth: isMobile ? "100%" : "600px", // Full width on mobile
+    maxWidth: isMobile ? "100%" : "600px",
     textAlign: isMobile ? "center" : "left",
-    padding: "20px",
+    padding: isMobile ? "20px 10px" : "40px",
     flex: "1",
     minWidth: "300px",
+    boxSizing: "border-box",
   };
 
   const headingStyle = {
-    fontSize: isMobile ? "2rem" : "3rem", // Reduce font size on smaller screens
+    fontSize: isMobile ? "2.5rem" : "3.5rem",
     fontWeight: "bold",
-    marginBottom: "10px",
+    marginBottom: "20px",
     lineHeight: "1.2",
+    color: "#333",
   };
 
   const orangeLineStyle = {
-    fontSize: isMobile ? "1.5rem" : "2rem",
+    fontSize: isMobile ? "1.8rem" : "2.5rem",
     fontWeight: "bold",
     color: "#ff5722",
-    marginBottom: isMobile ? "10px" : "20px",
+    marginBottom: "30px",
     marginTop: "20px",
   };
 
   const descriptionStyle = {
-    fontSize: isMobile ? "1rem" : "1.2rem", // Adjust font size for responsiveness
-    marginBottom: "20px",
+    fontSize: isMobile ? "1rem" : "1.2rem",
+    marginBottom: "30px",
     color: "#555",
+    lineHeight: "1.6",
   };
 
   const inputGroupStyle = {
     display: "flex",
-    flexDirection: isMobile ? "column" : "row", // Stack input and button on mobile
+    flexDirection: isMobile ? "column" : "row", // Stack vertically on mobile
     alignItems: "center",
     marginBottom: "20px",
-    gap: isMobile ? "10px" : "0", // Add spacing between elements on mobile
+    width: "100%",
   };
 
   const inputStyle = {
     flex: "1",
-    padding: "10px",
+    padding: "15px",
     border: "1px solid #ccc",
-    borderRadius: "4px",
+    borderRadius: "0px",
     fontSize: "1rem",
-    width: isMobile ? "100%" : "auto", // Full width on mobile
+    boxSizing: "border-box",
+    marginBottom: isMobile ? "10px" : "0", // Add margin between input and button on mobile
   };
 
   const buttonStyle = {
-    marginLeft: isMobile ? "0" : "10px", // No margin on mobile
-    padding: "10px 20px",
+    padding: "15px 20px",
     backgroundColor: "#ff5722",
     color: "#fff",
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "0px",
     cursor: "pointer",
     fontSize: "1rem",
     fontWeight: "bold",
+    textAlign: "center",
     width: isMobile ? "100%" : "auto", // Full width on mobile
   };
 
@@ -93,15 +98,16 @@ const Home = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "100%",
-    width: "100%",
-    overflow: "hidden",
+    width: "100%", // Ensure the image takes the full width of its container
+    padding: isMobile ? "20px" : "0",
+    boxSizing: "border-box",
   };
 
   const rightImageStyle = {
     width: "100%",
-    height: isMobile ? "300px" : "100%", // Adjust height for mobile
-    objectFit: "cover", // Ensure the image covers the container while maintaining aspect ratio
+    height: isMobile ? "auto" : "90%", // Maintain aspect ratio while increasing height
+    objectFit: "cover",
+    borderRadius: "10px",
   };
 
   return (
@@ -110,16 +116,18 @@ const Home = () => {
       <div style={leftContentStyle}>
         <div style={orangeLineStyle}>Online Education</div>
         <h1 style={headingStyle}>
-          Learn The Skills You <br />
+          Learn The Skills <br />You
           Need To Succeed
         </h1>
         <p style={descriptionStyle}>
-          Free online courses from the world’s leading experts. Join 18+ million learners today.
+          Free online courses from the world’s leading experts. Join 18+ million
+          learners today and enhance your skills from anywhere in the world.
+          Start learning now and shape your future.
         </p>
         <div style={inputGroupStyle}>
           <input
             type="text"
-            placeholder="Keywords of your course"
+            placeholder="Enter keywords of your course"
             style={inputStyle}
           />
           <button style={buttonStyle}>Search Course</button>

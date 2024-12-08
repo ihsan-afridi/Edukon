@@ -32,7 +32,7 @@ const Page = () => {
     alignItems: "center",
     flexDirection: "column",
     textAlign: "center",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)", // Mixed color gradient
+    // background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)", // Mixed color gradient
     padding: "20px",
   };
 
@@ -49,20 +49,20 @@ const Page = () => {
     marginTop: "10px",
   };
 
-  const lineStyle = {
-    width: isMobile ? "60%" : isTablet ? "40%" : "20%", // Adjust line width
-    height: "4px",
-    backgroundColor: "#2c3e50",
-    margin: "20px auto",
-  };
+  // const lineStyle = {
+  //   width: isMobile ? "60%" : isTablet ? "40%" : "20%", // Adjust line width
+  //   height: "4px",
+  //   backgroundColor: "#2c3e50",
+  //   margin: "20px auto",
+  // };
 
   return (
     <div style={containerStyle}>
       {/* Heading */}
       <h1 style={headingStyle}>About Our Edukon</h1>
 
-      {/* Horizontal Divider */}
-      <div style={lineStyle}></div>
+      {/* Horizontal Divider
+      <div style={lineStyle}></div> */}
 
       {/* Breadcrumb */}
       <h5 style={breadcrumbStyle}>

@@ -6,7 +6,7 @@ const Feedback = () => {
   // Inline styles
   const containerStyle = {
     padding: "40px 20px",
-    background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
+    // background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)"
   };
 
   const headingStyle = {
