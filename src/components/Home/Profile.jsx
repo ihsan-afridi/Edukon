@@ -1,44 +1,42 @@
 import React from "react";
-import profileImage from "../../assets/profile.png"; // Path to the profile image
+import profileImage from "../../assets/profile.png"; // Path to your profile image
 
 const Profile = () => {
   const containerStyle = {
     display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+    flexDirection: window.innerWidth <= 768 ? "column" : "row",
     alignItems: "center",
+    justifyContent: "center",
     padding: "20px",
-    margin: "0 auto",
     maxWidth: "1300px",
-    // background: "linear-gradient(to bottom right, #a8e063, #f7e5a5, #ffffff)",
+    margin: "0 auto",
   };
 
   const leftSideStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    flex: window.innerWidth <= 768 ? "0 0 auto" : "1 1 40%",
     margin: "20px",
-    flex: "1 1 40%",
   };
 
   const profileImageStyle = {
     borderRadius: "50%",
-    width: "100%", // Ensure image adapts to container
-    maxWidth: "300px", // Limit max size for smaller screens
+    width: "80%", // Set width to a percentage for responsiveness
+    maxWidth: "300px", // Restrict maximum size
+    minWidth: "150px", // Set a minimum size for smaller screens
     height: "auto", // Maintain aspect ratio
-    position: "relative",
-    zIndex: 2,
+    display: window.innerWidth <= 400 ? "none" : "block", // Hide for very small screens
   };
 
   const rightSideStyle = {
-    flex: "1 1 55%",
-    textAlign: "left",
+    flex: window.innerWidth <= 768 ? "0 0 auto" : "1 1 55%",
+    textAlign: window.innerWidth <= 768 ? "center" : "left",
     padding: "20px",
   };
 
   const headingStyle = {
-    fontSize: "20px",
+    fontSize: "24px",
     fontWeight: "bold",
     color: "orange",
     marginBottom: "15px",
@@ -55,6 +53,7 @@ const Profile = () => {
     display: "flex",
     alignItems: "center",
     marginBottom: "20px",
+    textAlign: "left",
   };
 
   const iconStyle = {
@@ -75,34 +74,25 @@ const Profile = () => {
     color: "#555",
   };
 
-  // Responsive adjustments using inline styles with media queries
-  const responsiveContainer = {
-    ...containerStyle,
-    flexDirection: "column",
-    alignItems: "center",
-  };
-
-  const responsiveRightSideStyle = {
-    ...rightSideStyle,
-    textAlign: "center", // Center text on smaller screens
-  };
-
   return (
-    <div style={window.innerWidth <= 768 ? responsiveContainer : containerStyle}>
+    <div style={containerStyle}>
       {/* Left Side: Profile Image */}
       <div style={leftSideStyle}>
-        <img src={profileImage} alt="Profile" style={profileImageStyle} />
+        <img
+          src={profileImage}
+          alt="Profile"
+          style={profileImageStyle}
+        />
+        {/* Hidden Text Fallback */}
+        <p style={{ display: "none" }}>Profile Image</p>
       </div>
 
       {/* Right Side: Text and Features */}
-      <div style={window.innerWidth <= 768 ? responsiveRightSideStyle : rightSideStyle}>
+      <div style={rightSideStyle}>
         <h2 style={headingStyle}>About Our Edukon</h2>
         <h1>Good Qualification Services And Better Skills</h1>
         <p style={paragraphStyle}>
-          Distinctively provide
-          access multifunction to users whereas transparent processes incentivize
-          efficient functionalities rather than extensible architecture. Communicate
-          leveraged services and cross-platform.
+          Distinctively provide access to multifunctional users while leveraging transparent processes that incentivize efficient functionalities and extensible architecture. Communicate leveraged services and cross-platform solutions.
         </p>
 
         {/* Feature: Skilled Instructors */}
@@ -111,8 +101,7 @@ const Profile = () => {
           <div>
             <div style={featureTextStyle}>Skilled Instructors</div>
             <p style={featureDescStyle}>
-              Distinctively provide access multifunction to users whereas communicate
-              leveraged services.
+              Access multifunctional users and communicate leveraged services.
             </p>
           </div>
         </div>
@@ -123,8 +112,7 @@ const Profile = () => {
           <div>
             <div style={featureTextStyle}>Get Certificate</div>
             <p style={featureDescStyle}>
-              Distinctively provide access multifunction to users whereas communicate
-              leveraged services.
+              Leverage transparent processes for extensible architecture.
             </p>
           </div>
         </div>
@@ -135,8 +123,7 @@ const Profile = () => {
           <div>
             <div style={featureTextStyle}>Online Classes</div>
             <p style={featureDescStyle}>
-              Distinctively provide access multifunction to users whereas communicate
-              leveraged services.
+              Communicate leveraged services with cross-platform solutions.
             </p>
           </div>
         </div>
