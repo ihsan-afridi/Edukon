@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const whiteBarStyle = {
     backgroundColor: "#fff", // White background
-    padding: "10px 20px",
+    padding: "5px 15px", // Reduced padding for a smaller height
     fontSize: "14px",
     display: "flex",
     justifyContent: "space-between",
@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   const navLinkStyle = {
-    margin: "0 15px",
+    margin: "0 12px", // Reduced margin for smaller height
     color: "#000",
     textDecoration: "none",
     fontWeight: "500",
@@ -35,9 +35,9 @@ const Navbar = () => {
   };
 
   const buttonStyle = {
-    borderRadius: "0px",
-    padding: "12px 24px",
-    fontSize: "16px",
+    borderRadius: "5px",
+    padding: "10px 20px", // Reduced padding for smaller height
+    fontSize: "12px",
     fontWeight: "bold",
     border: "1px solid transparent",
     display: "inline-flex",
@@ -91,7 +91,7 @@ const Navbar = () => {
         {/* Contact Information */}
         <div
           className="d-flex align-items-center flex-wrap"
-          style={{ fontSize: "18px", gap: "10px" }}
+          style={{ fontSize: "16px", gap: "10px" }} // Reduced font size
         >
           <i className="bi bi-telephone-fill"></i>
           &nbsp;+800-123-4567 6587 &nbsp;|&nbsp;
@@ -102,7 +102,7 @@ const Navbar = () => {
         {/* Social Media Links */}
         <div
           className="d-flex align-items-center flex-wrap"
-          style={{ fontSize: "18px", gap: "15px" }}
+          style={{ fontSize: "16px", gap: "15px" }} // Reduced font size
         >
           Find us on:&nbsp;
           <a href="#" style={{ color: "orange" }}>
@@ -122,11 +122,11 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-
+         
       {/* Navbar */}
       <nav
         className="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
-        style={{ padding: "10px 20px" }}
+        style={{ padding: "5px 15px" }} // Reduced padding for smaller height
       >
         <div className="container-fluid">
           {/* Logo */}
@@ -134,7 +134,7 @@ const Navbar = () => {
             src={logo}
             alt="Logo"
             className="logo"
-            style={{ maxWidth: "150px", height: "auto" }}
+            style={{ maxWidth: "120px", height: "auto" }} // Reduced logo size
           />
 
           {/* Toggle Button */}
@@ -187,14 +187,14 @@ const Navbar = () => {
           </div>
 
           {/* Buttons */}
-        <div className="d-flex flex-wrap mt-2 mt-lg-0">
-         <button style={loginButtonStyle}>
-         <i className="bi bi-person"></i>&nbsp;Login
-       </button>
-      <button style={signUpButtonStyle}>
-      <i className="bi bi-person-plus"></i>&nbsp;Sign Up
-      </button>
-      </div>
+          <div className="d-flex flex-wrap mt-2 mt-lg-0">
+            <button style={loginButtonStyle}>
+              <i className="bi bi-person"></i>&nbsp;Login
+            </button>
+            <button style={signUpButtonStyle}>
+              <i className="bi bi-person-plus"></i>&nbsp;Sign Up
+            </button>
+          </div>
         </div>
       </nav>
     </div>
